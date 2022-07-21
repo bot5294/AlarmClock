@@ -1,10 +1,10 @@
+// startClock is auto-triggered and provides real-time clock features
 function startClock() {
     let date = new Date(); 
     let hh = date.getHours();
     let mm = date.getMinutes();
     let ss = date.getSeconds();
     let session = "AM";
-  
     if(hh == 0){
         hh = 12;
     }
@@ -12,13 +12,10 @@ function startClock() {
         hh = hh - 12;
         session = "PM";
      }
-  
      hh = (hh < 10) ? "0" + hh : hh;
      mm = (mm < 10) ? "0" + mm : mm;
      ss = (ss < 10) ? "0" + ss : ss;
-      
      let time = hh + ":" + mm + ":" + ss + " " + session;
-  
     document.getElementById("time_div").innerText = time;
     let list = document.getElementById('alrmList');
     if(list.childNodes.length > 1){
@@ -26,27 +23,25 @@ function startClock() {
         
         for(let i=0;i<alarms.length;i++){
             if(alarms[i].innerText == time){
-                console.log('inside alarma')
                 alert('Wake UP!');
                 alarms[i].setAttribute("class","lineThrough");
             }
         }
     } 
-    let t = setTimeout(startClock, 1000);
+    let x = setTimeout(startClock, 1000);
 }
 startClock();
 
 
-
+// checkValue func keeps check on time imput & restrict invalid time input
 function checkValue(){
     console.log('i am clicked')
     let hr0 = document.getElementById('hrZero');
     let hr1 = document.getElementById("hrOne");
-    if(parseInt(hr1.value) > 2){
-        hr0.value="0";
+    if(parseInt(hr1.value) > 2){ // if 2nd digit in hh is >2
+        hr0.value="0"; // then set 1st digit 0
     }
     if(hr0.value == "1"){
-        console.log('1 is set');
         hr1.setAttribute("max","2");
     }else{
         hr1.setAttribute("max","9")
@@ -59,9 +54,10 @@ function setAlarm(){
     let ss = document.getElementById('ssZero').value + document.getElementById('ssOne').value;
     let session = document.getElementById('session').value;
     let time = hh+':'+mm+":"+ss+" " +session;
-    if(IsAlreadyPresent(time)){
+    if(IsAlreadyPresent(time)){ //checks if alarm for this time already present or not
         return;
     }
+    // create and append alarm
     let parent = document.getElementById('alrmList');
     const rDiv = document.createElement('div');
     rDiv.setAttribute("class","row bWhite pt-2 rDiv");
@@ -103,6 +99,7 @@ function IsAlreadyPresent(time){
     }
     return false; 
 }
+// toggle func is for dark/light mode functionality
 function toggle(){
     let icon = document.getElementById('icon');
     let main = document.getElementById('main');
@@ -128,7 +125,7 @@ function toggle(){
     }
    
 }
-
+// changeColor is a helper func to reduce repeatation of the code
 function changeColor(from,to){
     let list = document.getElementById('alrmList');
         if(list.childNodes.length > 1){

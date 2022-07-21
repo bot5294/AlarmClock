@@ -2,8 +2,8 @@ body{
     background-color: black;
     color: white;
 }
+/* main class is the default class of main div */
 .main{
-    /* position: relative; */
     margin: 0 auto;
     margin-top: 3%;
     background-color: black;
@@ -15,8 +15,8 @@ body{
     font-size:x-large;
     box-shadow: 2px 2px 20px 10px white;
 }
+/* mainLight class is toggled version of main for light/dark mode toggle */
 .mainLight{
-    /* position: relative; */
     margin: 0 auto;
     margin-top: 3%;
     background-color:pink;
@@ -26,7 +26,6 @@ body{
     height:500px;
     font-weight: bold;
     font-size:x-large;
-    /* box-shadow: 2px 2px 2px 1px white; */
 }
 .reduceWidth {
     border-radius: 25%;
@@ -34,18 +33,18 @@ body{
     font-weight: bold;
     width: 30px;
     cursor: default;
-    /* height: 1.8em; */
-
 }
 .textCenter{
     text-align: center;
 }
+/* provide additional independent scroll bar to alarm list */
 .scrollDiv{
     max-height: 260px;
     overflow-y: scroll;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;
 }
+/* hides scroll bar */
 .scrollDiv::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
@@ -73,9 +72,10 @@ body{
 .bBlack{
     border:1px solid black;
 }
-@media only screen and (max-width:720px) {
+/* media query for very small devices */
+/* changed width & height incase of small devices */
+@media only screen and (max-width:500px) {
     .main{
-        /* position: relative; */
         margin: 0 auto;
         margin-top: 3%;
         background-color: black;
@@ -88,7 +88,6 @@ body{
         box-shadow: 2px 2px 20px 10px white;
     }
     .mainLight{
-        /* position: relative; */
         margin: 0 auto;
         margin-top: 3%;
         background-color:pink;
@@ -98,6 +97,5 @@ body{
         height:600px;
         font-weight: bold;
         font-size:x-large;
-        /* box-shadow: 2px 2px 2px 1px white; */
     }
 }
