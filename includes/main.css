@@ -1,0 +1,42 @@
+body{
+    background-color: black;
+}
+.main{
+    /* position: relative; */
+    margin: 0 auto;
+    margin-top: 3%;
+    background-color: pink;
+    border: 2px solid white;
+    border-radius: 10%;
+    width: 500px;
+    height:600px;
+    font-weight: bold;
+    font-size:x-large;
+}
+.reduceWidth {
+    border-radius: 25%;
+    font-size: small;
+    font-weight: bold;
+    width: 30px;
+    cursor: default;
+    /* height: 1.8em; */
+
+}
+.textCenter{
+    text-align: center;
+}
+.scrollDiv{
+    max-height: 350px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+}
+.scrollDiv::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.lineThrough{
+    text-decoration: line-through;
+    font-weight: bold;
+    color: red;
+    opacity: 50%;
+}
