@@ -115,14 +115,7 @@ function toggle(){
         document.body.style.color = "black";
         box.classList.add("bBlack");
         box.classList.remove("bWhite");
-        let list = document.getElementById('alrmList');
-        if(list.childNodes.length > 1){
-            let nums = document.getElementsByClassName('rDiv');
-            for(let i=0;i<nums.length;i++){
-                nums[i].classList.add('bBlack');
-                nums[i].classList.remove('bWhite');
-            }
-        }
+        changeColor('bWhite','bBlack');
     }else{
         icon.removeAttribute("class");
         icon.setAttribute("class","bi bi-toggle-on")
@@ -131,18 +124,18 @@ function toggle(){
         document.body.style.color = "white";
         box.classList.add("bWhite");
         box.classList.remove("bBlack");
-        let list = document.getElementById('alrmList');
-        if(list.childNodes.length > 1){
-            let nums = document.getElementsByClassName('rDiv');
-            for(let i=0;i<nums.length;i++){
-                nums[i].classList.add('bWhite');
-                nums[i].classList.remove('bBlack');
-            }
-        }
+        changeColor('bBlack','bWhite');
     }
    
 }
 
-// function changeColor(from,to){
-
-// }
+function changeColor(from,to){
+    let list = document.getElementById('alrmList');
+        if(list.childNodes.length > 1){
+            let nums = document.getElementsByClassName('rDiv');
+            for(let i=0;i<nums.length;i++){
+                nums[i].classList.add(to);
+                nums[i].classList.remove(from);
+            }
+        }
+}
