@@ -1,17 +1,32 @@
 body{
     background-color: black;
+    color: white;
 }
 .main{
     /* position: relative; */
     margin: 0 auto;
     margin-top: 3%;
-    background-color: pink;
+    background-color: black;
     border: 2px solid white;
     border-radius: 10%;
     width: 500px;
-    height:600px;
+    height:500px;
     font-weight: bold;
     font-size:x-large;
+    box-shadow: 2px 2px 20px 10px white;
+}
+.mainLight{
+    /* position: relative; */
+    margin: 0 auto;
+    margin-top: 3%;
+    background-color:pink;
+    border: 2px solid white;
+    border-radius: 10%;
+    width: 500px;
+    height:500px;
+    font-weight: bold;
+    font-size:x-large;
+    /* box-shadow: 2px 2px 2px 1px white; */
 }
 .reduceWidth {
     border-radius: 25%;
@@ -26,7 +41,7 @@ body{
     text-align: center;
 }
 .scrollDiv{
-    max-height: 350px;
+    max-height: 260px;
     overflow-y: scroll;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;
@@ -39,4 +54,19 @@ body{
     font-weight: bold;
     color: red;
     opacity: 50%;
+}
+#toggle{
+    background-color: black;
+}
+#alrmList{
+    width: 500px;
+}
+.mrl{
+    margin-left:40px;
+}
+.bWhite{
+    border:1px solid white;
+}
+.bBlack{
+    border:1px solid black;
 }

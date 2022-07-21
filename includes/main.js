@@ -25,7 +25,6 @@ function startClock() {
         let alarms = document.getElementsByClassName('alrmTime');
         
         for(let i=0;i<alarms.length;i++){
-            console.log(alarms[i].innerText +" " + time)
             if(alarms[i].innerText == time){
                 console.log('inside alarma')
                 alert('Wake UP!');
@@ -65,7 +64,7 @@ function setAlarm(){
     }
     let parent = document.getElementById('alrmList');
     const rDiv = document.createElement('div');
-    rDiv.setAttribute("class","row border border-dark border-opacity-25 pt-2");
+    rDiv.setAttribute("class","row bWhite pt-2 rDiv");
     const cDiv1 = document.createElement('div');
     cDiv1.setAttribute("class","col-8 textCenter p-1");
     let p = document.createElement('p');
@@ -97,7 +96,6 @@ function IsAlreadyPresent(time){
     if(list.childNodes.length > 1){
         let alarms = document.getElementsByClassName('alrmTime');
         for(let i=0;i<alarms.length;i++){
-            console.log(alarms[i].innerText +" " + time)
             if(alarms[i].innerText == time){
                 return true;
             }
@@ -105,3 +103,46 @@ function IsAlreadyPresent(time){
     }
     return false; 
 }
+function toggle(){
+    let icon = document.getElementById('icon');
+    let main = document.getElementById('main');
+    let box = document.getElementById('setAlarmBox');
+    if(icon.classList.contains('bi-toggle-on')){
+        icon.removeAttribute("class");
+        icon.setAttribute("class","bi bi-toggle-off")
+        main.removeAttribute('class');
+        main.setAttribute("class","mainLight")
+        document.body.style.color = "black";
+        box.classList.add("bBlack");
+        box.classList.remove("bWhite");
+        let list = document.getElementById('alrmList');
+        if(list.childNodes.length > 1){
+            let nums = document.getElementsByClassName('rDiv');
+            for(let i=0;i<nums.length;i++){
+                nums[i].classList.add('bBlack');
+                nums[i].classList.remove('bWhite');
+            }
+        }
+    }else{
+        icon.removeAttribute("class");
+        icon.setAttribute("class","bi bi-toggle-on")
+        main.removeAttribute('class');
+        main.setAttribute("class","main")
+        document.body.style.color = "white";
+        box.classList.add("bWhite");
+        box.classList.remove("bBlack");
+        let list = document.getElementById('alrmList');
+        if(list.childNodes.length > 1){
+            let nums = document.getElementsByClassName('rDiv');
+            for(let i=0;i<nums.length;i++){
+                nums[i].classList.add('bWhite');
+                nums[i].classList.remove('bBlack');
+            }
+        }
+    }
+   
+}
+
+// function changeColor(from,to){
+
+// }
